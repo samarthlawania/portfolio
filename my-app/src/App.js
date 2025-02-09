@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Hero from "./Components/Hero";
 import Contacts from "./Components/Contacts";
@@ -24,9 +23,9 @@ function App() {
   return (
     <Container>
       <Hero />
-      <Contacts />
       <Who />
       <Works />
+      <Contacts />
     </Container>
   );
 }

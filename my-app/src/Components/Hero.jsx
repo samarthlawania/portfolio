@@ -31,7 +31,7 @@ const Text = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 74px;
+  font-size: 54px;
 
   @media only screen and (max-width: 768px) {
     text-align: center;
