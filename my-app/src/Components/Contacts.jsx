@@ -4,6 +4,12 @@ import emailjs from "@emailjs/browser";
 import  EarthCanvas  from "./canvas/Earth";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import styled from "styled-components";
+
+const Section = styled.div`
+  height: 100vh;
+  scroll-snap-align: center;
+`;
 
 const Contacts = () => {
   const formRef = useRef();
@@ -63,6 +69,7 @@ const Contacts = () => {
   };
 
   return (
+    <Section>
     <div
       className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
     >
@@ -128,6 +135,7 @@ const Contacts = () => {
         <EarthCanvas />
       </motion.div>
     </div>
+    </Section>
   );
 };
 
