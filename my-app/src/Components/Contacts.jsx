@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import  {styles}  from "../styles";
 import  EarthCanvas  from "./canvas/Earth";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
@@ -11,7 +12,7 @@ const Section = styled.div`
   scroll-snap-align: center;
 `;
 
-const Contacts = () => {
+const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
@@ -71,14 +72,14 @@ const Contacts = () => {
   return (
     <Section>
     <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
+      className={`xl:mt-12 flex xl:flex-row flex-row gap-10 overflow-hidden`}
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
       >
-        <p>Get in touch</p>
-        <h3>Contact.</h3>
+        <p className={styles.sectionSubText}>Get in touch</p>
+        <h3 className={styles.sectionHeadText}>Contact.</h3>
 
         <form
           ref={formRef}
@@ -139,4 +140,4 @@ const Contacts = () => {
   );
 };
 
-export default SectionWrapper(Contacts, "contact");
+export default SectionWrapper(Contact, "contact");
