@@ -38,7 +38,7 @@ const Contactcard = styled.div`
         transform: translateY(-5px);
     }
 `;
-
+emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY); 
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -65,16 +65,16 @@ const Contact = () => {
 
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "JavaScript Mastery",
+          to_name: "SAMARTH LAWANIA",
           from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
+          to_email: "samarthlawania2002@gmail.com",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
@@ -127,7 +127,7 @@ const Contact = () => {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="What's your name?"
-                    className='bg-tertiary py-3 px-4 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+                    className='bg-tertiary py-3 px-4 placeholder:text-secondary text-black rounded-lg outline-none border-none font-medium'
                   />
                 </label>
                 <label className='flex flex-col'>
@@ -138,7 +138,7 @@ const Contact = () => {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="What's your email address?"
-                    className='bg-tertiary py-3 px-4 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+                    className='bg-tertiary py-3 px-4 placeholder:text-secondary text-black rounded-lg outline-none border-none font-medium'
                   />
                 </label>
                 <label className='flex flex-col flex-grow'>
@@ -149,7 +149,7 @@ const Contact = () => {
                     value={form.message}
                     onChange={handleChange}
                     placeholder='What would you like to say?'
-                    className='bg-tertiary py-3 px-4 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium resize-none h-[120px]'
+                    className='bg-tertiary py-3 px-4 placeholder:text-secondary text-black rounded-lg outline-none border-none font-medium resize-none h-[120px]'
                   />
                 </label>
 
