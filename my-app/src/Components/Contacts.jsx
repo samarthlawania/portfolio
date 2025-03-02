@@ -19,9 +19,10 @@ const Contactcard = styled.div`
     background: linear-gradient(145deg, #1a1a2e, #16213e);
     border-radius: 16px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 30px;
     width: 500px;
     z-index: 1;
-    height: 80%;
+    height: 77%;
     align-self: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease-in-out;
