@@ -4,12 +4,6 @@ import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Cube from "./Cube";
 
-const Section = styled.div`
-  height: 100vh;
-  scroll-snap-align: center;
-  display: flex;
-  justify-content: center;
-`;
 
 const Container = styled.div`
   height: 100vh;
@@ -80,7 +74,7 @@ const Button = styled.button`
 
 const Who = () => {
   return (
-    <Section>
+      <>
       <Container>
         <Left>
           <Canvas camera={{ position: [5, 5, 5], fov: 25 }}>
@@ -104,7 +98,7 @@ const Who = () => {
           <Button>See our works</Button>
         </Right>
       </Container>
-    </Section>
+      </>
   );
 };
 

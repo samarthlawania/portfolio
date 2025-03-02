@@ -7,13 +7,6 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import styled from "styled-components";
 
-const Section = styled.div`
-  min-height: 100vh;
-  scroll-snap-align: center;
-  @media (max-width: 768px) {
-    padding: 20px;
-  }
-`;
 
 const Contactcard = styled.div`
     background: linear-gradient(145deg, #1a1a2e, #16213e);
@@ -97,7 +90,7 @@ const Contact = () => {
   };
 
   return (
-    <Section>
+    <>     
       <div className={`xl:mt-12 flex flex-col md:flex-row gap-10 overflow-hidden`}>
         <div className="w-full md:w-1/2 flex items-center justify-center min-h-[600px] h-screen p-4">
           <Contactcard>
@@ -173,7 +166,7 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
-    </Section>
+    </>
   );
 };
 

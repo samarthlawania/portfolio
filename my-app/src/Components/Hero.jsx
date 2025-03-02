@@ -2,14 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 
-const Section = styled.div`
-  height: 100vh;
-  scroll-snap-align: center;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-`;
-
 const Container  = styled.div`
   height :100vh;
   scroll-snap-align:center;
@@ -106,7 +98,7 @@ const Img = styled.img`
 `;
 
 function Hero() {
-  return <Section>
+  return <>
     <Navbar/>
       <Container>
           <Text style={{ marginLeft: "90px" }}>
@@ -125,7 +117,7 @@ function Hero() {
             <Img src="./img/moon.png" />
           </AnimatedPic>
       </Container>
-    </Section>;
+      </>
 }
 
 export default Hero;

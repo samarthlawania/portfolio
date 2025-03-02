@@ -2,14 +2,6 @@ import React from 'react'
 import styled from 'styled-components';
 
 
-const Section = styled.div`
-  display: flex;
-  justify-content: center;
-
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-  }
-`;
 
 const Container = styled.div`
   width: 90%;
@@ -71,7 +63,7 @@ const Button = styled.button`
 
 function Navbar() {
   return (
-    <Section>
+    <>
         <Container>
             <Links>
                 <Logo src="img/logo.png" />
@@ -87,7 +79,7 @@ function Navbar() {
                 <Button>Hire now</Button>
             </Icons>
         </Container>
-    </Section>
+    </>
   )
 }
 

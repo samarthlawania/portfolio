@@ -4,16 +4,19 @@ import Contacts from "./Components/Contacts";
 import Who from "./Components/Who";
 import Works from "./Components/Works";
 import styled from "styled-components";
-
+import Technology from "./Components/Technology";
 const Container = styled.div`
   height: 100vh;
-  background-color: rebeccapurple;
-  scroll-snap-type: y mandatory;
-  scrolling-behavior: smooth;
-  overflow-y: scroll;
+  scroll-behavior: smooth;
+  overflow-y: auto;
   scrollbar-width: none;
   color: white;
   background: url("./img/bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -24,6 +27,7 @@ function App() {
     <Container>
       <Hero />
       <Who />
+      <Technology />
       <Works />
       <Contacts />
     </Container>
