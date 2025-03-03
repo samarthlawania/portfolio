@@ -24,7 +24,9 @@ import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
-import movie from "./movie-search.png";
+import ecommerce from "./e-commerce.jpeg";
+import gdocs from "./googledocs.jpeg";
+import coffee from "./coffeeclone.png";
 export {
   backend,
   creator,
@@ -50,5 +52,7 @@ export {
   shopify,
   starbucks,
   tesla,
-  movie,
+coffee,
+  ecommerce,
+  gdocs,
 };

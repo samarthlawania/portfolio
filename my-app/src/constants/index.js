@@ -15,8 +15,9 @@ import {
     git,
     figma,
     docker,
-    movie,
-
+    ecommerce,
+    gdocs,
+    coffee,
   } from "../assets";
   
   export const navLinks = [
@@ -125,7 +126,7 @@ import {
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "E-commerce app",
       description:
         "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
       tags: [
@@ -142,7 +143,7 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: movie,
+      image: ecommerce,
       source_code_link: "https://github.com/samarthlawania/Ecommerce",
     },
     {
@@ -167,7 +168,7 @@ import {
             color: "pink-text-gradient",
           },
       ],
-      image: movie,
+      image: gdocs,
       source_code_link: "https://github.com/samarthlawania/Mini-project-2",
     },
     {
@@ -184,7 +185,7 @@ import {
           color: "green-text-gradient",
         },
       ],
-      image: movie,
+      image: coffee,
       source_code_link: "https://github.com/samarthlawania/coffee-clone",
     },
   ];

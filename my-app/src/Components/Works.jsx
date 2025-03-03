@@ -100,8 +100,9 @@ const ProjectCardComponent = ({ index, name, description, tags, image, source_co
     <Tilt
       perspective={500}
       scale={1.02}
-      transitionSpeed={450}
+      transitionSpeed={550}
       className="w-full"
+      style={{ height: 451 }}
     >
       <ProjectCard 
         variants={fadeIn("up", "spring", index * 0.5, 0.75)}
@@ -166,6 +167,7 @@ const Works = () => {
             key={`project-${index}`}
             index={index}
             {...project}
+            height={451}
           />
         ))}
       </ProjectsContainer>
