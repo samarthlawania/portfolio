@@ -62,20 +62,23 @@ const Button = styled.button`
 `;
 
 function Navbar() {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
         <Container>
             <Links>
                 <Logo src="img/logo.png" />
                 <List>
-                    <ListItem>Home</ListItem>
-                    <ListItem>About</ListItem>
-                    <ListItem>Project</ListItem>
-                    <ListItem>Content</ListItem>
+                    <ListItem onClick={() => scrollToSection('about')}>About</ListItem>
+                    <ListItem onClick={() => scrollToSection('projects')}>Project</ListItem>
+                    <ListItem onClick={() => scrollToSection('contact')}>Contact</ListItem>
                 </List>
             </Links>
-            <Icons>
-                <Icon src="./img/search.png" />
+            <Icons onClick={() => scrollToSection('contact')}>
                 <Button>Hire now</Button>
             </Icons>
         </Container>

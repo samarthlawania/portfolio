@@ -95,7 +95,6 @@ const Who = () => {
           <Desc>
           A creative full-stack developer crafting seamless digital experiences with design and code.
           </Desc>
-          <Button>See our works</Button>
         </Right>
       </Container>
       </>

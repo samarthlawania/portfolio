@@ -98,6 +98,10 @@ const Img = styled.img`
 `;
 
 function Hero() {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
   return <>
     <Navbar/>
       <Container>
@@ -110,7 +114,7 @@ function Hero() {
               <Subtitle>What I do</Subtitle>
             </WhatWeDo>
             <Desc>Building seamless, scalable, and intuitive user experiences with modern tech.</Desc>
-            <Button>Learn More</Button>
+            <Button onClick={() => scrollToSection('projects')} >Learn More</Button>
           </Text>
 
           <AnimatedPic>

@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
+import { experiences } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
 
@@ -95,6 +96,123 @@ const Tag = styled.span`
   background: rgba(255, 255, 255, 0.1);
 `;
 
+const ExperienceContainer = styled.div`
+  margin-top: 5rem;
+`;
+
+const ExperienceCard = styled(motion.div)`
+  background: rgba(29, 24, 54, 1);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+`;
+
+const ExperienceHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+`;
+
+const CompanyInfo = styled.div`
+  h3 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  h4 {
+    color: #aaa;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+`;
+
+const DateLocation = styled.div`
+  color: #888;
+  text-align: right;
+
+  @media (max-width: 768px) {
+    text-align: left;
+  }
+`;
+
+const CompanyLink = styled.div`
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  
+  svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    color: #aaa;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: white;
+    }
+  }
+`;
+
+const ExperienceCardComponent = ({ experience }) => {
+  const { title, company_name, date, points, link } = experience;
+  
+  return (
+    <ExperienceCard
+      variants={fadeIn("up", "spring", 0.5, 0.75)}
+      initial={{ opacity: 1 }}
+      animate={{ opacity: 1 }}
+    >
+      <ExperienceHeader>
+        <CompanyInfo>
+          <h3>{title}</h3>
+          <h4>
+            {company_name}
+            {link && (
+              <CompanyLink onClick={() => window.open(link, "_blank")}>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  strokeWidth={1.5} 
+                  stroke="currentColor"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" 
+                  />
+                </svg>
+              </CompanyLink>
+            )}
+          </h4>
+        </CompanyInfo>
+        <DateLocation>
+          <div>{date}</div>
+        </DateLocation>
+      </ExperienceHeader>
+      
+      <ul className="mt-5 list-disc ml-5 space-y-2">
+        {points.map((point, index) => (
+          <li
+            key={`experience-point-${index}`}
+            className="text-secondary text-[14px] pl-1 tracking-wider"
+          >
+            {point}
+          </li>
+        ))}
+      </ul>
+    </ExperienceCard>
+  );
+};
+
 const ProjectCardComponent = ({ index, name, description, tags, image, source_code_link }) => {
   return (
     <Tilt
@@ -138,7 +256,7 @@ const ProjectCardComponent = ({ index, name, description, tags, image, source_co
 
 const Works = () => {
   return (
-    <>
+    < >
       <motion.div 
         variants={textVariant()}
         initial={{ opacity: 1 }}
@@ -161,7 +279,7 @@ const Works = () => {
         and manage projects effectively.
       </motion.p>
 
-      <ProjectsContainer style={{paddingRight: "100px"}}>
+      <ProjectsContainer id="projects" style={{paddingRight: "100px"}}>
         {projects.map((project, index) => (
           <ProjectCardComponent
             key={`project-${index}`}
@@ -171,7 +289,31 @@ const Works = () => {
           />
         ))}
       </ProjectsContainer>
-      </>
+
+      <ExperienceContainer>
+        <motion.div 
+          variants={textVariant()}
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
+        >
+          <p className={styles.sectionSubText}>Where I've worked</p>
+          <h2 className={styles.sectionHeadText}>Work Experience.</h2>
+        </motion.div>
+
+        <motion.div
+          variants={fadeIn("", "", 0.1, 1)}
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
+        >
+          {experiences.map((experience, index) => (
+            <ExperienceCardComponent
+              key={`experience-${index}`}
+              experience={experience}
+            />
+          ))}
+        </motion.div>
+      </ExperienceContainer>
+    </>
   );
 };
 

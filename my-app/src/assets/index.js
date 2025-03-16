@@ -27,6 +27,8 @@ import tesla from "./company/tesla.png";
 import ecommerce from "./e-commerce.jpeg";
 import gdocs from "./googledocs.jpeg";
 import coffee from "./coffeeclone.png";
+import angular from "./tech/angular.png"
+import bootstrap from "./tech/bootstrap.png"
 export {
   backend,
   creator,
@@ -55,4 +57,6 @@ export {
 coffee,
   ecommerce,
   gdocs,
+  angular,
+  bootstrap
 };
