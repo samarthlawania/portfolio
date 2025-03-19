@@ -31,7 +31,7 @@ const Contactcard = styled.div`
         transform: translateY(-5px);
     }
 `;
-emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY); 
+
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -67,7 +67,9 @@ const Contact = () => {
           to_email: "samarthlawania2002@gmail.com",
           message: form.message,
         },
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        {
+          publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
+        }
       )
       .then(
         () => {
